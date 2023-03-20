@@ -3,24 +3,28 @@
   "name": "apple",
   "items": [
     {
+      "id": "001",
       "label": "Text",
       "type": "text",
       "defaultValue": "",
       "value": ""
     },
     {
+      "id": "002",
       "label": "Checkbox",
       "type": "checkbox",
       "defaultValue": true,
       "value": true
     },
     {
+      "id": "003",
       "label": "Text",
       "type": "text",
       "defaultValue": "",
       "value": ""
     },
     {
+      "id": "004",
       "label": "Checkbox",
       "type": "checkbox",
       "defaultValue": true,

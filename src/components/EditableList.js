@@ -22,8 +22,8 @@ function EditableList({jsonFilename = 'editableList.json'}) {
         <pre>{JSON.stringify(editableList, null, 2)}</pre>
       </div>
       {editableList.items?.map(item => {
-        return <div className={styles.section}>
-          <label htmlFor={item.label}>{item.label}&nbsp;</label>
+        return <div key={item.id} className={styles.section}>
+          <label htmlFor={item.label} title={item.id}>{item.label}&nbsp;</label>
           <input type={item.type} />
         </div>
       })}
