@@ -1,8 +1,18 @@
 {
   "version": "0.1",
   "name": "apple",
-  "EditableList": [
+  "items": [
     {
+      "label": "TEXT",
+      "type": "text",
+      "defaultValue": "",
+      "value": ""
+    },
+    {
+      "label": "CHECKBOX",
+      "type": "checkbox",
+      "defaultValue": true,
+      "value": true
     }
   ]
 }

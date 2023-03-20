@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import styles from '@/styles/EditableList.module.css'
 
 function EditableList({jsonFilename = 'editableList.json'}) {
   const [editableList, setEditableList] = useState([])
@@ -16,9 +17,16 @@ function EditableList({jsonFilename = 'editableList.json'}) {
   if (!editableList) return <div>Loading...</div>
 
   return (
-    <pre>
-      {JSON.stringify(editableList, null, 2)}
-    </pre>
+    <>
+      <div className={styles.section}>
+        <pre>{JSON.stringify(editableList, null, 2)}</pre>
+      </div>
+      {editableList.items?.map(item => {
+        return <div className={styles.section}>
+          <input type={item.type} />
+        </div>
+      })}
+    </>
   )
 }
 
