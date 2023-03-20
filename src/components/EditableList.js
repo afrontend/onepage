@@ -23,6 +23,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
       </div>
       {editableList.items?.map(item => {
         return <div className={styles.section}>
+          <label htmlFor={item.label}>{item.label}&nbsp;</label>
           <input type={item.type} />
         </div>
       })}

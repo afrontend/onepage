@@ -3,13 +3,25 @@
   "name": "apple",
   "items": [
     {
-      "label": "TEXT",
+      "label": "Text",
       "type": "text",
       "defaultValue": "",
       "value": ""
     },
     {
-      "label": "CHECKBOX",
+      "label": "Checkbox",
+      "type": "checkbox",
+      "defaultValue": true,
+      "value": true
+    },
+    {
+      "label": "Text",
+      "type": "text",
+      "defaultValue": "",
+      "value": ""
+    },
+    {
+      "label": "Checkbox",
       "type": "checkbox",
       "defaultValue": true,
       "value": true
