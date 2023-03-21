@@ -3,6 +3,7 @@ import styles from '@/styles/EditableList.module.css'
 
 function EditableList({jsonFilename = 'editableList.json'}) {
   const [editableList, setEditableList] = useState([])
+  const [resultList, setResultList] = useState({})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,12 +20,25 @@ function EditableList({jsonFilename = 'editableList.json'}) {
   return (
     <>
       <div className={styles.section}>
-        <pre>{JSON.stringify(editableList, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(editableList, null, 2)}</pre> */}
+        <pre>{JSON.stringify(resultList, null, 2)}</pre>
       </div>
       {editableList.items?.map(item => {
         return <div key={item.id} className={styles.section}>
-          <label htmlFor={item.label} title={item.id}>{item.label}&nbsp;</label>
-          <input type={item.type} />
+          {item.type === 'checkbox' &&
+            <>
+              <input type={item.type} onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }/>
+              &nbsp;
+              <label htmlFor={item.label} title={item.id}>{item.label}</label>
+            </>
+          }
+          {item.type !== 'checkbox' &&
+            <>
+              <label htmlFor={item.label} title={item.id}>{item.label}</label>
+              &nbsp;
+              <input type={item.type} onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }/>
+            </>
+          }
         </div>
       })}
     </>
