@@ -1,27 +1,36 @@
 {
   "version": "0.1",
-  "name": "apple",
+  "name": "fruit",
   "items": [
     {
       "id": "001",
       "label": "Text",
       "type": "text",
-      "defaultValue": "",
+      "defaultValue": "banana",
       "value": ""
     },
     {
       "id": "002",
       "label": "Checkbox",
       "type": "checkbox",
-      "defaultValue": true,
-      "value": true
+      "defaultValue": false
     },
     {
       "id": "003",
       "label": "Text",
       "type": "date",
-      "defaultValue": "",
-      "value": ""
+      "defaultValue": ""
+    },
+    {
+      "id": "004",
+      "label": "Text",
+      "type": "radio",
+      "defaultValue": "banana",
+      "options": [
+        "apple",
+        "banana",
+        "cherry"
+      ]
     }
   ]
 }
