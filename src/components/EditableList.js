@@ -31,53 +31,65 @@ function EditableList({jsonFilename = 'editableList.json'}) {
       <div className={styles.section}>
         {/* <pre>{JSON.stringify(editableList, null, 2)}</pre> */}
         <pre>{JSON.stringify(resultList, null, 2)}</pre>
-      </div>
-      {editableList.items?.map(item => {
-        return <div key={item.id} className={styles.section}>
-          {item.type === 'text' &&
-            <div>
-              <label title={item.id}>
-                {item.label}
-                &nbsp;
-                <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }/>
-                &nbsp;
-              </label>
+        <div>
+          {editableList.items?.map(item => {
+            return <div key={item.id} className={styles.section}>
+              {item.type === 'text' &&
+                <div>
+                  <label title={item.id}>
+                    {item.label}
+                    &nbsp;
+                    <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }/>
+                    &nbsp;
+                  </label>
+                </div>
+              }
+              {item.type === 'checkbox' &&
+                <div>
+                  <label title={item.id}>
+                    <input type={item.type} checked={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.checked}) }/>
+                    &nbsp;
+                    {item.label}
+                    &nbsp;
+                  </label>
+                </div>
+              }
+              {item.type === 'date' &&
+                <div>
+                  <label title={item.id}>
+                    {item.label}
+                    &nbsp;
+                    <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }/>
+                    &nbsp;
+                  </label>
+                </div>
+              }
+              {item.type === 'radio' &&
+                item.options.map(option => {
+                  return <div key={option}>
+                    <label title={item.id}>
+                      <input type={item.type} checked={resultList[item.id] === option} onChange={e => setResultList({...resultList, [item.id]: option}) }/>
+                      &nbsp;
+                      {option}
+                      &nbsp;
+                    </label>
+                  </div>
+                })
+              }
+              {item.type === 'number' &&
+                <div>
+                  <label title={item.id}>
+                    {item.label}
+                    &nbsp;
+                    <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: Number(e.target.value)}) }/>
+                    &nbsp;
+                  </label>
+                </div>
+              }
             </div>
-          }
-          {item.type === 'checkbox' &&
-            <div>
-              <label title={item.id}>
-                <input type={item.type} checked={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.checked}) }/>
-                &nbsp;
-                {item.label}
-                &nbsp;
-              </label>
-            </div>
-          }
-          {item.type === 'date' &&
-            <div>
-              <label title={item.id}>
-                {item.label}
-                &nbsp;
-                <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }/>
-                &nbsp;
-              </label>
-            </div>
-          }
-          {item.type === 'radio' &&
-            item.options.map(option => {
-              return <div key={option}>
-                <label title={item.id}>
-                  <input type={item.type} checked={resultList[item.id] === option} onChange={e => setResultList({...resultList, [item.id]: option}) }/>
-                  &nbsp;
-                  {option}
-                  &nbsp;
-                </label>
-              </div>
-            })
-          }
+          })}
         </div>
-      })}
+      </div>
     </>
   )
 }
