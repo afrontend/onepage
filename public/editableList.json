@@ -4,25 +4,32 @@
   "items": [
     {
       "id": "001",
-      "label": "Item:",
+      "label": "Search:",
+      "type": "search",
+      "defaultValue": "ba",
+      "value": ""
+    },
+    {
+      "id": "002",
+      "label": "Name:",
       "type": "text",
       "defaultValue": "banana",
       "value": ""
     },
     {
-      "id": "002",
+      "id": "003",
       "label": "Checkbox",
       "type": "checkbox",
       "defaultValue": false
     },
     {
-      "id": "003",
+      "id": "004",
       "label": "Date: ",
       "type": "date",
       "defaultValue": "2023-03-23"
     },
     {
-      "id": "004",
+      "id": "005",
       "label": "Color",
       "type": "radio",
       "defaultValue": "blue",
@@ -33,7 +40,7 @@
       ]
     },
     {
-      "id": "005",
+      "id": "006",
       "label": "Count:",
       "type": "number",
       "defaultValue": 200
