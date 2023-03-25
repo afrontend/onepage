@@ -44,6 +44,12 @@
       "label": "Count:",
       "type": "number",
       "defaultValue": 200
+    },
+    {
+      "id": "007",
+      "label": "Password:",
+      "type": "password",
+      "defaultValue": ""
     }
   ]
 }

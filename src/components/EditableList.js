@@ -34,7 +34,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
         <div>
           {editableList.items?.map(item => {
             return <div key={item.id} className={styles.section}>
-              {['text', 'search'].includes(item.type) &&
+              {['text', 'search', 'password'].includes(item.type) &&
                 <div>
                   <label title={item.id}>
                     {item.label}
