@@ -29,7 +29,9 @@
       "id": "004",
       "label": "Date: ",
       "type": "date",
-      "defaultValue": "2023-03-23"
+      "defaultValue": "2023-03-23",
+      "min": "2023-02-10",
+      "max": "2023-06-13"
     },
     {
       "id": "005",

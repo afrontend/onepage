@@ -38,7 +38,6 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label}
-                    &nbsp;
                     <input type={item.type} value={resultList[item.id]}
                       required
                       minLength={'min' in item ? item.min : "" }
@@ -59,9 +58,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     <input type={item.type} checked={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.checked}) }/>
-                    &nbsp;
                     {item.label}
-                    &nbsp;
                   </label>
                 </div>
               }
@@ -69,9 +66,16 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label}
-                    &nbsp;
-                    <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }/>
-                    &nbsp;
+                    <input type={item.type} value={resultList[item.id]}
+                      onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
+                      min={item.min}
+                      max={item.max}
+                    />
+                    <div className="">
+                      {'min' in item && <span>({item.min}</span>}
+                      &nbsp;~&nbsp;
+                      {'max' in item && <span>{item.max})</span>}
+                    </div>
                   </label>
                 </div>
               }
@@ -80,9 +84,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                   return <div key={option}>
                     <label title={item.id}>
                       <input type={item.type} checked={resultList[item.id] === option} onChange={e => setResultList({...resultList, [item.id]: option}) }/>
-                      &nbsp;
                       {option}
-                      &nbsp;
                     </label>
                   </div>
                 })
@@ -91,9 +93,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label}
-                    &nbsp;
                     <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: Number(e.target.value)}) }/>
-                    &nbsp;
                   </label>
                 </div>
               }
