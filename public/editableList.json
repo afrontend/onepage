@@ -37,11 +37,20 @@
       "id": "005",
       "label": "Color",
       "type": "radio",
-      "defaultValue": "blue",
+      "defaultValue": "1",
       "options": [
-        "red",
-        "blue",
-        "yellow"
+        {
+          "label": "red",
+          "value": "0"
+        },
+        {
+          "label": "blue",
+          "value": "1" 
+        },
+        {
+          "label": "yellow",
+          "value": "2" 
+        }
       ]
     },
     {

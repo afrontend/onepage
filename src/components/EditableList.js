@@ -81,10 +81,10 @@ function EditableList({jsonFilename = 'editableList.json'}) {
               }
               {item.type === 'radio' &&
                 item.options.map(option => {
-                  return <div key={option}>
+                  return <div key={option.value}>
                     <label title={item.id}>
-                      <input type={item.type} checked={resultList[item.id] === option} onChange={e => setResultList({...resultList, [item.id]: option}) }/>
-                      {option}
+                      <input type={item.type} checked={resultList[item.id] === option.value} onChange={e => setResultList({...resultList, [item.id]: option.value}) }/>
+                      {option.label}
                     </label>
                   </div>
                 })
