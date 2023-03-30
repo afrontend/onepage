@@ -93,7 +93,16 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label}
-                    <input type={item.type} value={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: Number(e.target.value)}) }/>
+                    <input type={item.type} value={resultList[item.id]}
+                      onChange={e => setResultList({...resultList, [item.id]: Number(e.target.value)}) }
+                      min={item.min}
+                      max={item.max}
+                    />
+                    <div className="">
+                      {'min' in item && <span>({item.min}</span>}
+                      &nbsp;~&nbsp;
+                      {'max' in item && <span>{item.max})</span>}
+                    </div>
                   </label>
                 </div>
               }

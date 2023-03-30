@@ -45,11 +45,11 @@
         },
         {
           "label": "blue",
-          "value": "1" 
+          "value": "1"
         },
         {
           "label": "yellow",
-          "value": "2" 
+          "value": "2"
         }
       ]
     },
@@ -57,15 +57,17 @@
       "id": "006",
       "label": "Count:",
       "type": "number",
-      "defaultValue": 200
+      "defaultValue": 200,
+      "min": "180",
+      "max": "210"
     },
     {
       "id": "007",
       "label": "Password:",
       "type": "password",
       "defaultValue": "",
-      "min": 4,
-      "max": 12
+      "min": "4",
+      "max": "12"
     }
   ]
 }
