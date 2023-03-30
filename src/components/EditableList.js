@@ -30,7 +30,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
     <>
       <div className={styles.section}>
         {/* <pre>{JSON.stringify(editableList, null, 2)}</pre> */}
-        <pre>{JSON.stringify(resultList, null, 2)}</pre>
+        <pre className={styles.textarea}>{JSON.stringify(resultList, null, 2)}</pre>
         <div>
           {editableList.items?.map(item => {
             return <div key={item.id} className={styles.section}>
