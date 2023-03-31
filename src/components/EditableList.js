@@ -47,9 +47,9 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                         [item.id]: e.target.value})
                       }/>
                     <div className="errorMsg">
-                      {'min' in item && <span>minLength: {item.min}</span>}
+                      {'min' in item && <span>min: {item.min}</span>}
                       &nbsp;
-                      {'max' in item && <span>maxLength: {item.max}</span>}
+                      {'max' in item && <span>max: {item.max}</span>}
                     </div>
                   </label>
                 </div>
