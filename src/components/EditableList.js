@@ -26,11 +26,16 @@ function EditableList({jsonFilename = 'editableList.json'}) {
 
   if (!editableList) return <div>Loading...</div>
 
+  function handleReset() {
+      setResultList(toResultList(editableList.items))
+  }
+
   return (
     <>
       <div className={styles.section}>
         {/* <pre>{JSON.stringify(editableList, null, 2)}</pre> */}
         <pre className={styles.textarea}>{JSON.stringify(resultList, null, 2)}</pre>
+        <button onClick={handleReset}>Reset</button>
         <div>
           {editableList.items?.map(item => {
             return <div key={item.id} className={styles.section}>
@@ -47,9 +52,9 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                         [item.id]: e.target.value})
                       }/>
                     <div className="errorMsg">
-                      {'min' in item && <span>min: {item.min}</span>}
-                      &nbsp;
-                      {'max' in item && <span>max: {item.max}</span>}
+                      ({'min' in item && <span>{item.min}</span>}
+                      &nbsp;~&nbsp;
+                      {'max' in item && <span>{item.max} </span>}chars)
                     </div>
                   </label>
                 </div>
@@ -72,9 +77,9 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                       max={item.max}
                     />
                     <div className="errorMsg">
-                      {'min' in item && <span>({item.min}</span>}
+                      ({'min' in item && <span>{item.min}</span>}
                       &nbsp;~&nbsp;
-                      {'max' in item && <span>{item.max})</span>}
+                      {'max' in item && <span>{item.max}</span>})
                     </div>
                   </label>
                 </div>
