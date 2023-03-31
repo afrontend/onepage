@@ -33,7 +33,6 @@ function EditableList({jsonFilename = 'editableList.json'}) {
   return (
     <>
       <div className={styles.section}>
-        {/* <pre>{JSON.stringify(editableList, null, 2)}</pre> */}
         <pre className={styles.textarea}>{JSON.stringify(resultList, null, 2)}</pre>
         <button onClick={handleReset}>Reset</button>
         <div>
@@ -114,6 +113,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
             </div>
           })}
         </div>
+        <pre className={styles.textarea}>{JSON.stringify(editableList, null, 2)}</pre>
       </div>
     </>
   )
