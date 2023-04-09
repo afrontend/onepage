@@ -38,10 +38,11 @@ function EditableList({jsonFilename = 'editableList.json'}) {
         <div>
           {editableList.items?.map(item => {
             return <div key={item.id} className={styles.section}>
+
               {['text', 'search', 'password'].includes(item.type) &&
                 <div>
                   <label title={item.id}>
-                    {item.label}
+                    {item.label} ({item.id})
                     <input type={item.type} value={resultList[item.id]}
                       required
                       minLength={'min' in item ? item.min : "" }
@@ -58,18 +59,20 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                   </label>
                 </div>
               }
+
               {item.type === 'checkbox' &&
                 <div>
                   <label title={item.id}>
                     <input type={item.type} checked={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.checked}) }/>
-                    {item.label}
+                    {item.label} ({item.id})
                   </label>
                 </div>
               }
+
               {item.type === 'date' &&
                 <div>
                   <label title={item.id}>
-                    {item.label}
+                    {item.label} ({item.id})
                     <input type={item.type} value={resultList[item.id]}
                       onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
                       min={item.min}
@@ -83,20 +86,25 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                   </label>
                 </div>
               }
+
+              {item.type === 'radio' && <label title="apple">
+                {item.label} ({item.id})
+              </label> }
               {item.type === 'radio' &&
                 item.options.map(option => {
                   return <div key={option.value}>
                     <label title={item.id}>
                       <input type={item.type} checked={resultList[item.id] === option.value} onChange={() => setResultList({...resultList, [item.id]: option.value}) }/>
-                      {option.label} ({option.value})
+                      {option.label}
                     </label>
                   </div>
                 })
               }
+
               {item.type === 'number' &&
                 <div>
                   <label title={item.id}>
-                    {item.label}
+                    {item.label} ({item.id})
                     <input type={item.type} value={resultList[item.id]}
                       onChange={e => setResultList({...resultList, [item.id]: Number(e.target.value)}) }
                       min={item.min}
@@ -110,6 +118,22 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                   </label>
                 </div>
               }
+
+              {item.type === 'select' &&
+                <div>
+                  <label title={item.id}>
+                    {item.label} ({item.id})
+                    <select value={resultList[item.id]}
+                      onChange={e => setResultList({...resultList, [item.id]: Number(e.target.value)}) }
+                    >
+                      {item.options.map(option => {
+                        return <option key={option.label} value={option.value}>{option.label}</option>
+                      })}
+                    </select>
+                  </label>
+                </div>
+              }
+
             </div>
           })}
         </div>

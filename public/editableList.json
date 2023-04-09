@@ -27,7 +27,7 @@
     },
     {
       "id": "004",
-      "label": "Date: ",
+      "label": "Date:",
       "type": "date",
       "defaultValue": "2023-03-23",
       "min": "2023-02-10",
@@ -35,20 +35,20 @@
     },
     {
       "id": "005",
-      "label": "Color",
+      "label": "Color:",
       "type": "radio",
       "defaultValue": "1",
       "options": [
         {
-          "label": "red",
+          "label": "red (0)",
           "value": "0"
         },
         {
-          "label": "blue",
+          "label": "blue (1)",
           "value": "1"
         },
         {
-          "label": "yellow",
+          "label": "yellow (2)",
           "value": "2"
         }
       ]
@@ -68,6 +68,26 @@
       "defaultValue": "",
       "min": "4",
       "max": "12"
+    },
+    {
+      "id": "008",
+      "label": "Select",
+      "type": "select",
+      "defaultValue": "1",
+      "options": [
+        {
+          "label": "lemon (0)",
+          "value": "0"
+        },
+        {
+          "label": "lime (1)",
+          "value": "1"
+        },
+        {
+          "label": "berry (2)",
+          "value": "2"
+        }
+      ]
     }
   ]
 }
