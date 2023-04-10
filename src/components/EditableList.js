@@ -134,6 +134,18 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 </div>
               }
 
+              {item.type === 'textarea' &&
+                <div>
+                  <label title={item.id}>
+                    {item.label} ({item.id}) ({resultList[item.id].length})
+                    <textarea value={resultList[item.id]}
+                      onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
+                      rows={item.rows}
+                    />
+                  </label>
+                </div>
+              }
+
             </div>
           })}
         </div>

@@ -88,6 +88,13 @@
           "value": "2"
         }
       ]
+    },
+    {
+      "id": "009",
+      "label": "Description:",
+      "type": "textarea",
+      "defaultValue": "",
+      "rows": 10
     }
   ]
 }
