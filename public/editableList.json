@@ -12,7 +12,7 @@
     },
     {
       "id": "002",
-      "label": "Name:",
+      "label": "Text (Name):",
       "type": "text",
       "defaultValue": "banana",
       "value": "",
@@ -35,7 +35,7 @@
     },
     {
       "id": "005",
-      "label": "Color:",
+      "label": "Radio (color):",
       "type": "radio",
       "defaultValue": "1",
       "options": [
@@ -91,7 +91,7 @@
     },
     {
       "id": "009",
-      "label": "Description:",
+      "label": "Textarea (description):",
       "type": "textarea",
       "defaultValue": "",
       "rows": 10
