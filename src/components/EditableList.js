@@ -87,6 +87,25 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 </div>
               }
 
+              {item.type === 'range' &&
+                <div>
+                  <label title={item.id}>
+                    {item.label} ({item.id}) [{resultList[item.id]}]
+                    <input type={item.type} value={resultList[item.id]}
+                      onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
+                      min={item.min}
+                      max={item.max}
+                      step={item.step}
+                    />
+                    <div className="errorMsg">
+                      ({'min' in item && <span>{item.min}</span>}
+                      &nbsp;~&nbsp;
+                      {'max' in item && <span>{item.max}</span>})
+                    </div>
+                  </label>
+                </div>
+              }
+
               {item.type === 'radio' && <label title="apple">
                 {item.label} ({item.id})
               </label> }

@@ -95,6 +95,15 @@
       "type": "textarea",
       "defaultValue": "",
       "rows": 10
+    },
+    {
+      "id": "010",
+      "label": "Range:",
+      "type": "range",
+      "defaultValue": "50",
+      "min": "10",
+      "max": "1000",
+      "step": "10"
     }
   ]
 }
