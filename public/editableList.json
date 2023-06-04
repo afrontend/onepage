@@ -7,7 +7,6 @@
       "label": "Search:",
       "type": "search",
       "defaultValue": "ba",
-      "value": "",
       "min": "2"
     },
     {
@@ -15,18 +14,25 @@
       "label": "Text (Name):",
       "type": "text",
       "defaultValue": "banana",
-      "value": "",
       "min": "4",
       "max": "8"
     },
     {
       "id": "003",
+      "label": "Password:",
+      "type": "password",
+      "defaultValue": "",
+      "min": "4",
+      "max": "12"
+    },
+    {
+      "id": "004",
       "label": "Checkbox",
       "type": "checkbox",
       "defaultValue": false
     },
     {
-      "id": "004",
+      "id": "005",
       "label": "Date:",
       "type": "date",
       "defaultValue": "2023-03-23",
@@ -34,7 +40,7 @@
       "max": "2023-06-13"
     },
     {
-      "id": "005",
+      "id": "006",
       "label": "Time:",
       "type": "time",
       "defaultValue": "10:00",
@@ -42,7 +48,7 @@
       "max": "18:00"
     },
     {
-      "id": "006",
+      "id": "007",
       "label": "Radio (color):",
       "type": "radio",
       "defaultValue": "1",
@@ -62,20 +68,12 @@
       ]
     },
     {
-      "id": "007",
+      "id": "008",
       "label": "Count:",
       "type": "number",
       "defaultValue": 200,
       "min": "180",
       "max": "210"
-    },
-    {
-      "id": "008",
-      "label": "Password:",
-      "type": "password",
-      "defaultValue": "",
-      "min": "4",
-      "max": "12"
     },
     {
       "id": "009",
@@ -100,7 +98,7 @@
     {
       "id": "010",
       "label": "Textarea (description):",
-      "type": "textarea",
+      "type": " textarea",
       "defaultValue": "",
       "rows": 10
     },
