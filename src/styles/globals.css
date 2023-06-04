@@ -114,3 +114,7 @@ input:invalid:focus {
 input:valid ~ .errorMsg {
   display: none;
 }
+
+input:invalid ~ .errorMsg {
+  color: #e84118;
+}
