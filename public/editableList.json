@@ -7,7 +7,8 @@
       "label": "Search:",
       "type": "search",
       "defaultValue": "ba",
-      "min": "2"
+      "min": "2",
+      "readonly": true
     },
     {
       "id": "002",

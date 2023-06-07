@@ -43,7 +43,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label} ({item.id})
-                    <input type={item.type} value={resultList[item.id]}
+                    <input disabled={item.readonly === true} type={item.type} value={resultList[item.id]}
                       required
                       minLength={'min' in item ? item.min : "" }
                       maxLength={'max' in item ? item.max : "" }
@@ -63,7 +63,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
               {item.type === 'checkbox' &&
                 <div>
                   <label title={item.id}>
-                    <input type={item.type} checked={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.checked}) }/>
+                    <input disabled={item.readonly === true} type={item.type} checked={resultList[item.id]} onChange={e => setResultList({...resultList, [item.id]: e.target.checked}) }/>
                     {item.label} ({item.id})
                   </label>
                 </div>
@@ -73,7 +73,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label} ({item.id})
-                    <input type={item.type} value={resultList[item.id]}
+                    <input disabled={item.readonly === true} type={item.type} value={resultList[item.id]}
                       onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
                       min={item.min}
                       max={item.max}
@@ -91,7 +91,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label} ({item.id})
-                    <input type={item.type} value={resultList[item.id]}
+                    <input disabled={item.readonly === true} type={item.type} value={resultList[item.id]}
                       onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
                       min={item.min}
                       max={item.max}
@@ -109,7 +109,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label} ({item.id}) [{resultList[item.id]}]
-                    <input type={item.type} value={resultList[item.id]}
+                    <input disabled={item.readonly === true} type={item.type} value={resultList[item.id]}
                       onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
                       min={item.min}
                       max={item.max}
@@ -131,7 +131,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 item.options.map(option => {
                   return <div key={option.value}>
                     <label title={item.id}>
-                      <input type={item.type} checked={resultList[item.id] === option.value} onChange={() => setResultList({...resultList, [item.id]: option.value}) }/>
+                      <input disabled={item.readonly === true} type={item.type} checked={resultList[item.id] === option.value} onChange={() => setResultList({...resultList, [item.id]: option.value}) }/>
                       {option.label}
                     </label>
                   </div>
@@ -142,7 +142,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label} ({item.id})
-                    <input type={item.type} value={resultList[item.id]}
+                    <input disabled={item.readonly === true} type={item.type} value={resultList[item.id]}
                       onChange={e => setResultList({...resultList, [item.id]: Number(e.target.value)}) }
                       min={item.min}
                       max={item.max}
