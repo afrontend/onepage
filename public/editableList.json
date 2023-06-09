@@ -14,9 +14,10 @@
       "id": "002",
       "label": "Text (Name):",
       "type": "text",
-      "defaultValue": "banana",
+      "defaultValue": "",
       "min": "4",
-      "max": "8"
+      "max": "8",
+      "placeholder": "Search fruit"
     },
     {
       "id": "003",
@@ -99,9 +100,10 @@
     {
       "id": "010",
       "label": "Textarea (description):",
-      "type": " textarea",
+      "type": "textarea",
       "defaultValue": "",
-      "rows": 10
+      "rows": 10,
+      "placeholder": "Enter description"
     },
     {
       "id": "011",

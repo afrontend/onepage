@@ -43,7 +43,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                 <div>
                   <label title={item.id}>
                     {item.label} ({item.id})
-                    <input disabled={item.readonly === true} type={item.type} value={resultList[item.id]}
+                    <input disabled={item.readonly === true} placeholder={item.placeholder || ''} type={item.type} value={resultList[item.id]}
                       required
                       minLength={'min' in item ? item.min : "" }
                       maxLength={'max' in item ? item.max : "" }
@@ -176,6 +176,7 @@ function EditableList({jsonFilename = 'editableList.json'}) {
                   <label title={item.id}>
                     {item.label} ({item.id}) ({resultList[item.id].length})
                     <textarea value={resultList[item.id]}
+                      placeholder={item.placeholder || ''} 
                       onChange={e => setResultList({...resultList, [item.id]: e.target.value}) }
                       rows={item.rows}
                     />
